@@ -303,7 +303,7 @@ function saveData() {
 	updateCookie('email', result.email)
 	updateCookie('password', result.password)
 
-	fetch('https://site-backend-production.up.railway.app/update', {
+	fetch('https://site-backend-production-ec73.up.railway.app/update', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
