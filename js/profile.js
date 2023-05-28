@@ -89,7 +89,7 @@ for (var i = 0; i < menuItems.length; i++) {
 
 		if (selectedMenu === 'Данные') {
 			showDataPage()
-		} else if (selectedMenu === 'Результаты тестов') {
+		} else if (selectedMenu === 'Мои сообщения') {
 			showMessagesPage()
 		}
 	})

@@ -132,20 +132,23 @@ label {
 }
 
 .sidebar-menu {
+	display: flex;
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
 .menu-item {
+	width: 100%;
 	padding: 10px;
 	cursor: pointer;
-	color: #fff;
+	background-color: var(--background-color);
+	color: var(--text-color);
 }
 
 .menu-item.active {
-	background-color: #ffffff;
-	color: rgb(0, 0, 0);
+	background-color: var(--text-color);
+	color: var(--background-color);
 }
 
 .content {
@@ -244,5 +247,5 @@ label {
 
 .mdc-list-item__text {
 	margin-right: 16px;
-	color: #fff;
+	color: var(--text-color);
 }
