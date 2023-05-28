@@ -6,12 +6,13 @@ function getCookie(name) {
 }
 
 var isLoggedIn = getCookie('isLoggedIn')
+const url = new URL(window.location.href)
+const path = url.pathname
+var isMain = path.endsWith('site-frontend/index.html')
 
 document.addEventListener('DOMContentLoaded', function () {
-	const url = new URL(window.location.href)
-	const path = url.pathname
 
-	if (path.endsWith('index.html')) {
+	if (isMain) {
 		var accountLink = document.querySelectorAll('[href="pages/auth.html"]')
 	} else {
 		var accountLink = document.querySelectorAll('[href="./auth.html"]')
@@ -20,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	accountLink.forEach(function (link) {
 		if (isLoggedIn == 'true') {
 			link.innerHTML = 'Профиль'
-			if (path.endsWith('index.html') == true) {
+			if (isMain) {
 				link.href = 'pages/profile.html'
 			} else {
 				link.href = 'profile.html'
 			}
 		} else {
 			link.innerHTML = 'Войти'
-			if (path.endsWith('index.html') == true) {
+			if (isMain) {
 				link.href = 'pages/auth.html'
 			} else {
 				link.href = 'auth.html'
@@ -78,8 +79,17 @@ window.addEventListener('load', load)
 
 const checkbox = document.getElementById('theme-checkbox');
 const body = document.querySelector('body');
-const backgroundImageLight = "url('../src/img/light_theme.png')";
-const backgroundImageDark = "url('../src/img/1.gif')";
+let backgroundImageLight
+let backgroundImageDark
+
+if (isMain) {
+	backgroundImageLight = "url('./src/img/light_theme.png')";
+	backgroundImageDark = "url('./src/img/1.gif')";
+}
+else {
+	backgroundImageLight = "url('../src/img/light_theme.png')";
+	backgroundImageDark = "url('../src/img/1.gif')";
+}
 
 function setTheme(theme) {
   if (theme === 'light') {
@@ -128,3 +138,8 @@ document.addEventListener('scroll', (event) => {
 		document.getElementsByClassName('topbutton')[0].style.display = 'block'
 	}
 });
+
+
+if (path.endsWith('site-frontend/')) {
+	window.location.href = './index.html'
+}
