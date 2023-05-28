@@ -42,7 +42,7 @@ async function load() {
 
 		try {
 			const response = await fetch(
-				'https://site-backend-production.up.railway.app/getmessages',
+				'https://site-backend-production-ec73.up.railway.app/getmessages',
 				{
 					method: 'POST',
 					headers: {
