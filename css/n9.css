@@ -131,6 +131,17 @@ a:hover {
 	overflow: hidden;
 	transform: translateY(-50%);
 }
+/* Cursor1 */
+.cursor1{
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);  
 /* Animation */
 .typewriter-animation {
 	animation: typewriter 5s steps(50) 1s 1 normal both,
