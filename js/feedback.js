@@ -132,7 +132,7 @@ function sendFeedback() {
 	})
 	.then(response => {
 		if (response.ok) {
-			showNotification('Результаты отправлены на сервер!')
+			showNotification('Сообщение отправлено администратору!')
 		} else {
 			showNotification('Ошибка при отправке результатов на сервер!')
 		}
