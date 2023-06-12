@@ -119,7 +119,7 @@ registrationForm.addEventListener('submit', event => {
 					window.location.href = 'profile.html'
 				})
 			} else if (response.status === 409) {
-				throw new Error('Пользователь с таким именем уже существует')
+				throw new Error('Пользователь с такой почтой уже существует')
 			} else {
 				throw new Error('Ошибка при регистрации')
 			}
